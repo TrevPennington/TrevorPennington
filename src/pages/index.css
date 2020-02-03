@@ -1,0 +1,21 @@
+.articlesWrapper {
+    margin-left: 20px;
+}
+
+.articlesTitle {
+    color: #333;
+}
+
+.article {
+    margin-bottom: 4px;
+    font-family: sans-serif;
+}
+
+.articleLink {
+    color: #333;
+    text-decoration: none;
+}
+
+.articleDate {
+    color: #333;
+}

@@ -1,0 +1,16 @@
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    margin: auto;
+}
+
+.aboutContainer > * {
+    text-align: center;
+    color: #222;
+}
+
+.aboutTitle {
+    font-family: serif;
+}

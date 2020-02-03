@@ -16,11 +16,11 @@ const ButtonWrapper = styled.button`
   text-transform: uppercase;
   letter-spacing: 2px;
 
-  background: ${props => props.props.background || "black"};
+  background: ${props => props.props.background || "#333"};
   color: ${props => props.props.color || "rgb(255, 255, 255)"};
   font-size: ${props => props.props.fontSize || "15px"};
-  font-weight: ${props => props.props.fontWeight || "600"};
-  border-radius: ${props => props.props.radius || "6px"};
+  font-weight: ${props => props.props.fontWeight || "300"};
+  border-radius: ${props => props.props.radius || "25px"};
   margin-top: ${props => props.props.marginTop};
   margin-bottom: ${props => props.props.marginBottom};
 

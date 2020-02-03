@@ -18,6 +18,11 @@ class Layout extends React.Component {
             ...scale(1.5),
             marginBottom: rhythm(1.5),
             marginTop: 0,
+            fontFamily: `serif`,
+            fontWeight: 100,
+            textTransform: `uppercase`,
+            fontSize: `20px`,
+            letterSpacing: `3px`
           }}
         >
           <Link
@@ -59,17 +64,23 @@ class Layout extends React.Component {
           style={{
             marginLeft: `auto`,
             marginRight: `auto`,
-            maxWidth: rhythm(24),
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+            width: `100%`,
+            backgroundColor: `#efefef`,
           }}
         >
-          <header>{header}</header>
-          <main>{children}</main>
+          <header 
+            style={{ 
+              backgroundColor: `darkOliveGreen`,
+              width: `100%`,
+              height: `8em`
+            }}
+          >
+            {header}
+          </header>
+          <main>{children}</main> {/*main content of page. above is header, below is footer */}
         </div>
         <Footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+
         </Footer>
       </Wrapper>
     )
