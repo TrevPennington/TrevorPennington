@@ -1,0 +1,64 @@
+:root {
+    --main-accent: ghostwhite;
+    --main-text-color: #333;
+    --main-background: ghostwhite;
+}
+
+/* header when home */
+
+.pageWrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: var(--main-background);
+}
+
+.headerWrapper {
+    width: 100%;
+    background-color: var(--main-accent);
+    height: 75vh;
+}
+
+.headerHome {
+    margin-top: 0;
+    padding-top: 20vh;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+
+    color: var(--main-text-color);
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.homeTagline {
+    width: 35%;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    margin-top: 10vh;
+
+    color: var(--main-text-color);
+    font-weight: 300;
+    font-size: 1.2em;
+}
+
+/* Header when not home */
+
+.headerNotHomeWrapper {
+    background-color: darkgoldenrod;
+}
+
+.headerNotHome {
+    margin-top: 0;
+    font-size: 2em;
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+
+.headerToHome {
+    box-shadow: none;
+    text-decoration: none;
+    color: inherit;
+}

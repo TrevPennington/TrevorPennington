@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import "./layout.css"
 
 import { rhythm, scale } from "../utils/typography"
 
@@ -11,70 +12,34 @@ class Layout extends React.Component {
     const blogPath = `${__PATH_PREFIX__}/blog/`
     let header
 
-    if (location.pathname === rootPath || location.pathname === blogPath) {
+    if (location.pathname === rootPath) {
       header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-            fontFamily: `serif`,
-            fontWeight: 100,
-            textTransform: `uppercase`,
-            fontSize: `20px`,
-            letterSpacing: `3px`
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={location.pathname === blogPath ? `/blog/` : `/`}
-          >
+        <div className='headerWrapper'>
+          <h1 className='headerHome'>
             {title}
-          </Link>
-        </h1>
+          </h1>
+          <h2 className='homeTagline'>
+            This will be a tagline variable. wait until you learn one from T.A.
+          </h2>
+        </div>
       )
     } else {
       header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/blog/`}
-          >
-            {title}
-          </Link>
-        </h3>
+        <div className='headerNotHomeWrapper'>
+          <h3 className='headerNotHome'>
+            <Link className='headerToHome'
+              to={`/`}
+            >
+              {title}
+            </Link>
+          </h3>
+        </div>
       )
     }
     return (
       <Wrapper>
-        <div
-          style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
-            width: `100%`,
-            backgroundColor: `#efefef`,
-          }}
-        >
-          <header 
-            style={{ 
-              backgroundColor: `darkOliveGreen`,
-              width: `100%`,
-              height: `8em`
-            }}
-          >
+        <div className='pageWrapper'>
+          <header>
             {header}
           </header>
           <main>{children}</main> {/*main content of page. above is header, below is footer */}
@@ -92,8 +57,8 @@ const Wrapper = styled.div`
 `
 
 const Footer = styled.footer`
-  text-align: center;
-  margin: 24px;
+  height: 20vh;
+  background-color: ghostwhite;
 `
 
 export default Layout

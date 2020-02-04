@@ -14,3 +14,9 @@
 .aboutTitle {
     font-family: serif;
 }
+
+.aboutLink {
+    text-decoration: none;
+    color: transparent;
+    margin-bottom: 20px;
+}

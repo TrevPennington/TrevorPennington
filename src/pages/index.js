@@ -19,25 +19,27 @@ class IndexPage extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
 
-        <h2 className='articlesTitle'>Recent Articles 
-          </h2>
-        <div className='articlesWrapper'>
-          {posts.map(({ node }) => {
-            const headline = node.frontmatter.title || node.fields.slug
-            return (
-              <div key={node.fields.slug}>
-                <h2 className='article'>
-                <Link
-                  to={`blog${node.fields.slug}`}
-                  className="articleLink"
-                  >
-                   {headline}
-                  </Link>
-                </h2>
-                <p className="articleDate">{node.frontmatter.date}</p>
-              </div>
-            )
-          })}
+        <div className='articlesComp'>
+          <h2 className='articlesHeader'>Recent Articles 
+            </h2>
+          <div className='articlesWrapper'>
+            {posts.map(({ node }) => {
+              const headline = node.frontmatter.title || node.fields.slug
+              return (
+                <div className='articleItem' key={node.fields.slug}>
+                  <h2 className='articleTitle'>
+                  <Link
+                    to={`blog${node.fields.slug}`}
+                    className="articleLink"
+                    >
+                     {headline}
+                    </Link>
+                  </h2>
+                  <p className="articleDate">{node.frontmatter.date}</p>
+                </div>
+              )
+            })}
+          </div>
         </div>
 
         <About />
@@ -56,7 +58,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(limit: 4, sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt
