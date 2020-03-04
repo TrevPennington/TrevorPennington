@@ -1,7 +1,40 @@
+/* Dark Mode theming */
+
+body {
+    --bg: white;
+    --textNormal: #333;
+    --textTitle: #333;
+    --textLink: blue;
+    --hr: hsla(0, 0%, 0%, 0.2);
+  
+    background-color: var(--bg);
+  }
+  
+body.dark {
+    -webkit-font-smoothing: antialiased;
+  
+    --bg: #333;
+    --textNormal: rgba(255, 255, 255, 0.88);
+    --textTitle: white;
+    --textLink: yellow;
+    --hr: hsla(0, 0%, 100%, 0.2);
+}
+
+
+/* Site vars */
+
+
 :root {
     --main-accent: ghostwhite;
     --main-text-color: #333;
     --main-background: ghostwhite;
+    --main-splash-color: antiquewhite;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--textNormal);
+    transition: color 0.2s ease-out, background 0.2s ease-out;
 }
 
 /* header when home */
@@ -10,51 +43,63 @@
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    background-color: var(--main-background);
+    
 }
 
 .headerWrapper {
     width: 100%;
-    background-color: var(--main-accent);
-    height: 75vh;
+    height: 20em;
+    padding-bottom: 4em;
 }
 
 .headerHome {
     margin-top: 0;
-    padding-top: 20vh;
+    padding-top: 10vh;
     width: 60%;
     margin: auto;
     text-align: center;
 
-    color: var(--main-text-color);
-    font-size: 2.5em;
-    font-weight: 700;
+    color: var(--textNormal);
+    font-size: 1.6em;
+    font-style: italic;
+    font-weight: 200;
     letter-spacing: 2px;
 }
 
 .homeTagline {
-    width: 35%;
+    width: 80vw;
+    height: auto;
+    max-width: 650px;
     margin: auto;
     text-align: center;
     position: relative;
     margin-top: 10vh;
 
-    color: var(--main-text-color);
-    font-weight: 300;
-    font-size: 1.2em;
+    color: var(--textNormal);
+    font-weight: 200;
+    font-size: 1.4em;
+    letter-spacing: 1px;
+    line-height: 1.4em;
+}
+
+@media (max-width: 800px) {
+    .homeTagline {
+        font-size: 1em;
+    }
+
+    .headerHome {
+        font-size: 1.4em;
+    }
 }
 
 /* Header when not home */
 
-.headerNotHomeWrapper {
-    background-color: darkgoldenrod;
-}
 
 .headerNotHome {
     margin-top: 0;
     font-size: 2em;
     text-decoration: none;
-    color: var(--main-text-color);
+    color: var(--textNormal);
 }
 
 .headerToHome {

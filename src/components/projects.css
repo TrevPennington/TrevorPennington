@@ -1,4 +1,50 @@
-.projTitle{
-    font-family: sans-serif;
-    text-transform: allcaps;
+
+
+.projects-wrapper {
+    height: auto;
+    width: 60%;
+    margin: auto;
+    text-align: left;
+}
+
+@media (max-width: 750px) {
+    .projects-wrapper {
+        width: 80%;
+    }
+}
+
+.projects-title {
+    width: 40vw;
+    font-size: 1.6em;
+    font-weight: 200;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: var(--textNormal);
+}
+
+.project {
+    
+}
+
+.project-title {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    margin-top: 0;
+    letter-spacing: 0.5px;
+    color: var(--textNormal);
+}
+
+.project-description {
+    font-size: 0.9em;
+    margin-bottom: 0;
+    color: var(--textNormal);
+    
+}
+
+.breaker {
+    padding-top: 20px;
+    margin-bottom: 35px;
+    width: 25%;
+    border-bottom: 1.5px solid var(--hr);
 }

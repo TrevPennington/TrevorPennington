@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import About from "../components/about"
 import "./index.css"
+import Projects from "../components/projects"
 
 class IndexPage extends React.Component {
   render() {
@@ -19,7 +20,14 @@ class IndexPage extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
 
-        <div className='articlesComp'>
+
+        <About />
+        <Projects title='Projects' />
+
+
+        {/* TODO: Make articles a COMPONENT and ref that in here. (Whenever a blog is up) */}
+
+        {/* <div className='articlesComp'>
           <h2 className='articlesHeader'>Recent Articles 
             </h2>
           <div className='articlesWrapper'>
@@ -40,9 +48,8 @@ class IndexPage extends React.Component {
               )
             })}
           </div>
-        </div>
+        </div> */}
 
-        <About />
 
       </Layout>
     )

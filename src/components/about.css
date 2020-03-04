@@ -1,22 +1,9 @@
 .aboutContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 40%;
+    width: 60vh;
     margin: auto;
+    margin-bottom: 20px;
 }
 
 .aboutContainer > * {
-    text-align: center;
-    color: #222;
-}
-
-.aboutTitle {
-    font-family: serif;
-}
-
-.aboutLink {
-    text-decoration: none;
-    color: transparent;
-    margin-bottom: 20px;
+    width: 60vh;
 }
