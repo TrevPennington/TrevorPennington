@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 
 const Footer = styled.div`
-    height: 10vh;
-    margin-top: 5vh;
+    height: 6vh;
+    margin-top: 25vh;
 `
 const Info = styled.p`
     width: 50%;

@@ -3,12 +3,11 @@ import React, { useState } from "react"
 import styled from "styled-components"
 
 const ToggleSpacer = styled.div`
-  width: 20px;
+  width: 0px;
 `
 const ToggleWrapper = styled.div`
   width: 20px;
-  height: 20px;
-  transform: translateY(20px) translateX(20px);
+  height: 28px;
 `
 
 const DarkModeToggle = () => {
@@ -26,7 +25,7 @@ const DarkModeToggle = () => {
           >
             <svg
               version="1.1"
-              width="20"
+              width="25"
               viewBox="0 0 48 48"
               xmlns="http://www.w3.org/2000/svg"
               fill="var(--textNormal)"

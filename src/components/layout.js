@@ -2,10 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import "./layout.css"
-import Darkmode from "../components/darkmode"
 import Footer from "../components/footer"
-
-import { rhythm, scale } from "../utils/typography"
+import Socialbar from "../components/socialbar"
 
 class Layout extends React.Component {
   render() {
@@ -18,7 +16,6 @@ class Layout extends React.Component {
     if (location.pathname === rootPath) {
       header = (
         <div className='headerWrapper'>
-          <Darkmode />
           <h1 className='headerHome'>
             {title}
           </h1>
@@ -43,6 +40,7 @@ class Layout extends React.Component {
     return (
       <Wrapper>
         <div className='pageWrapper'>
+          <Socialbar />
           <header>
             {header}
           </header>
