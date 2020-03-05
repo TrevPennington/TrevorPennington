@@ -1,9 +1,11 @@
 .aboutContainer {
-    width: 60vh;
+    width: 65vw;
     margin: auto;
     margin-bottom: 20px;
+    max-width: 500px;
 }
 
 .aboutContainer > * {
-    width: 60vh;
+    width: 65vw;
+    max-width: 500px;
 }

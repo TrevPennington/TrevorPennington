@@ -22,6 +22,8 @@
 
 .linkbar {
     padding-right: 50px;
+    display: flex;
+    flex-direction: column nowrap;
 }
 
 .projects-title {
@@ -44,6 +46,7 @@
     margin-bottom: 5px;
     margin-top: 0;
     letter-spacing: 0.5px;
+    line-height: 1.4em;
     color: var(--textNormal);
 }
 
