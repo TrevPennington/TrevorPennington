@@ -31,8 +31,8 @@ export default () => {
     return (
         <Socialbar>
             <Darkmode />
-            <a><Git size='25px' /></a>
-            <a><Linked size='25px' /></a>
+            <a href="https://github.com/TrevPennington"><Git size='25px' /></a>
+            <a href="https://www.linkedin.com/in/trevorpennington"><Linked size='25px' /></a>
         </Socialbar>
     )
 }

@@ -39,7 +39,8 @@ export default () => {
   const projectList = projects.map(edge => {
     const proj = edge.node.frontmatter
       return (
-          <div className='project'>
+        
+          <div key={edge.node.id} className='project'>
             <div className='titlebar'>
               <h1 className='project-title'>{proj.title}</h1>
               <div className='linkbar'>
