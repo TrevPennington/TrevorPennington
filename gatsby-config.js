@@ -19,15 +19,7 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-dark-mode`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-feed-mdx`,
-    `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {

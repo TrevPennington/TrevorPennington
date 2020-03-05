@@ -1,5 +1,5 @@
 ---
-path: "/projects/project1"
+path: /project1
 title: "SquarePatch"
 description: "Clean and simple Squarespace plugins"
 link: this is the link

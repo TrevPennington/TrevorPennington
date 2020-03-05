@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 
 const ToggleSpacer = styled.div`
-  
+  width: 20px;
 `
 const ToggleWrapper = styled.div`
   width: 20px;
