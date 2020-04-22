@@ -27,6 +27,7 @@ export default () => {
               description
               link
               github
+              tags
             }
           }
         }
@@ -49,6 +50,13 @@ export default () => {
               </div>
             </div>
             <p className='project-description'>{proj.description}</p>
+            <div className='tagBar'>
+              {
+                proj.tags.map((tag) => (
+                  <p className='project-tags'>{tag}</p>
+                ))
+              }
+            </div>
             <div className='breaker'></div>
           </div>
       )

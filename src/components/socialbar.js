@@ -11,7 +11,7 @@ const Socialbar = styled.div`
     padding-top: 25px;
     display: flex;
     align-items: center;
-    @media (max-width: 800px) {
+    @media (max-width: 1100px) {
         width: 90%;
     }
     > * {

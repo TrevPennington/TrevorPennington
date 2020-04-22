@@ -6,6 +6,8 @@ body {
     --textTitle: #333;
     --textLink: blue;
     --hr: hsla(0, 0%, 0%, 0.2);
+    --splash: darkseagreen;
+    --proj: whitesmoke;
   
     background-color: var(--bg);
   }
@@ -18,6 +20,8 @@ body.dark {
     --textTitle: white;
     --textLink: yellow;
     --hr: hsla(0, 0%, 100%, 0.2);
+    --splash: darkslategrey;
+    --proj: darkslategrey;
 }
 
 
@@ -47,8 +51,7 @@ body {
 
 .headerWrapper {
     width: 100%;
-    height: 20em;
-    padding-bottom: 4em;
+    height: 6vh;
 }
 
 .headerHome {
@@ -64,22 +67,6 @@ body {
     font-weight: 200;
     letter-spacing: 2px;
     line-height: 1.2em;
-}
-
-.homeTagline {
-    width: 80vw;
-    height: auto;
-    max-width: 650px;
-    margin: auto;
-    text-align: center;
-    position: relative;
-    margin-top: 10vh;
-
-    color: var(--textNormal);
-    font-weight: 200;
-    font-size: 1.4em;
-    letter-spacing: 1px;
-    line-height: 1.4em;
 }
 
 @media (max-width: 800px) {

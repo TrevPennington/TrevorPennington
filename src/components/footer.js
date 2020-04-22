@@ -2,11 +2,17 @@ import React from "react"
 import styled from "styled-components"
 
 const Footer = styled.div`
-    height: 6vh;
-    margin-top: 25vh;
+    height: auto;
+    margin-top: 8rem;
+    background-color: var(--proj);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 `
 const Info = styled.p`
     width: 50%;
+    padding: 10px;
     font-size: 0.7em;
     text-align: center;
     margin: auto;
@@ -14,8 +20,7 @@ const Info = styled.p`
 export default () => {
     return (
         <Footer>
-            <Info>copyright 2020 by Trevor Pennington</Info>
-        
+            <Info>© 2020 Trevor Pennington</Info>
         </Footer>
     )
 }

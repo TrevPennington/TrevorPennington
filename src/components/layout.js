@@ -7,7 +7,6 @@ import Socialbar from "../components/socialbar"
 
 class Layout extends React.Component {
   render() {
-    const tagline = 'Hello, I am a designer and front end developer from Raleigh, NC. I specialize in React, GraphQL, and Gatsby.'
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     const blogPath = `${__PATH_PREFIX__}/blog/`
@@ -16,12 +15,6 @@ class Layout extends React.Component {
     if (location.pathname === rootPath) {
       header = (
         <div className='headerWrapper'>
-          <h1 className='headerHome'>
-            {title}
-          </h1>
-          <p className='homeTagline'>
-            {tagline}
-          </p>
         </div>
       )
     } else {
