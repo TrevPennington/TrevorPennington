@@ -5,7 +5,7 @@ module.exports = {
     // edit below
     title: `Trevor Pennington`,
     author: `Trevor Pennington`,
-    description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
+    description: `A peronal blog for Trevor Pennington`,
     siteUrl: `https://trevorpennington.netlify.com/`,
     social: {
       twitter: ``,
@@ -88,7 +88,7 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         // edit below
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/cpu.png`,
       },
     },
     {
