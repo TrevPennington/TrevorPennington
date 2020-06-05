@@ -5,14 +5,13 @@ import styled from "styled-components"
 
 
 const About = styled.div`
-  height: 15rem;
   width: 750px;
   margin: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  margin-bottom: 50px;
 
   @media (max-width: 800px) {
     flex-direction: column;
@@ -22,64 +21,66 @@ const About = styled.div`
 `
 
 const Splash = styled.div`
-  width: 30%;
-  height: 100%;
+  align-self: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid var(--bg);
-  @media (max-width: 800px) {
-    order: 2;
-    width: 75%;
-  }
+  flex-direction: row;
+  height: 150px;
 `
 
 const Profile = styled(Img)`
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
+  align-self: center;
+  margin-right: 20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
 
   @media (max-width: 800px) {
-    border-top-left-radius: 0px;
-    border-bottom-right-radius: 30px;
-  }
-`
-const Bio = styled.div`
-  background-color: var(--splash);
-  width: 75%;
-  height: 100%;
-  padding: 10px;
-  padding-left: 20px;
-  margin-bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  border: 1px solid var(--bg);
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
-  
-  @media (max-width: 800px) {
-    border-top-left-radius: 30px;
-    border-bottom-right-radius: 0px;
+    width: 75px;
+    height: 75px;
+    margin-right: 5px;
   }
 `
 
 const Name = styled.h1`
+  align-self: center;
   text-align: left;
-  font-size: 2.5em;
+  font-size: 2.7em;
   letter-spacing: 0.8px;
   line-height: 50px;
-  margin-top: 5px;
+  margin-top: 20px;
+  
+  margin-left: 20px;
   @media (max-width: 800px) {
-    font-size: 2em;
+    font-size: 2.2em;
+    line-height: 40px;
+    margin-top: 15px;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.8em;
   }
   @media (max-width: 370px) {
     font-size: 1.5em;
+    
   }
 `
+
+
+const Bio = styled.div`
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 0;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+  @media (max-width: 600px) {
+    width: 85%;
+    margin-top: 10px;
+  }
+`
+
+
 
 const Info = styled.p`
   text-align: left;
@@ -92,7 +93,7 @@ const data = useStaticQuery(graphql`
   query {
     pilgrim: file(relativePath: { eq: "profile.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 500) {
+        fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -100,15 +101,16 @@ const data = useStaticQuery(graphql`
   }
 `)
 
-const tagline = 'Hello, I am a designer and front end developer from Raleigh, NC. I currently focus on JavaScript, React, and React-Native.'
+const tagline = 'Hello, I am front end developer from Raleigh, NC. I currently focus on JavaScript, React, and React Native.'
 
 return (
     <About>
         <Splash>
           <Profile fluid={data.pilgrim.childImageSharp.fluid} alt='profile'/>
+          <Name>Trevor<br/>Pennington</Name>
         </Splash>
         <Bio>
-          <Name>Trevor<br/>Pennington</Name>
+          
           <Info>{tagline}</Info>
         </Bio>
     </About>

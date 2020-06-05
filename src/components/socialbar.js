@@ -6,14 +6,13 @@ import { Linkedin } from "@styled-icons/fa-brands/Linkedin"
 
 
 const Socialbar = styled.div`
-    width: 60%;
+    width: 100%;
     margin: auto;
     padding-top: 25px;
     display: flex;
     align-items: center;
-    @media (max-width: 1100px) {
-        width: 90%;
-    }
+    justify-content: center;
+
     > * {
         padding-right: 15px;
     }
