@@ -2,6 +2,10 @@
 a {
     text-shadow: none;
 }
+a:hover {
+    border: none;
+    text-decoration: none;
+}
 
 .articlesComp {
     width: 400px;

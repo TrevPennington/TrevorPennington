@@ -101,7 +101,7 @@ const data = useStaticQuery(graphql`
   }
 `)
 
-const tagline = 'Hello, I am front end developer from Raleigh, NC. I currently focus on JavaScript, React, and React Native.'
+const tagline = 'Hello, I am front end developer from Raleigh, NC. I currently focus on React, React Native and Swift.'
 
 return (
     <About>

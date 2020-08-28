@@ -81,10 +81,11 @@ body {
 
 /* Header when not home */
 
-
 .headerNotHome {
-    margin-top: 0;
-    font-size: 2em;
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2em;
     text-decoration: none;
     color: var(--textNormal);
 }

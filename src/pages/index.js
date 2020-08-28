@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import About from "../components/about"
 import "./index.css"
 import Projects from "../components/projects"
+import Blogs from "../components/blogs"
 
 class IndexPage extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class IndexPage extends React.Component {
         />
         <About />
         <Projects title='Projects' />
+        <Blogs title='Blogs' />
       </Layout>
     )
   }

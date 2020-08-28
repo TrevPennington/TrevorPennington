@@ -27,6 +27,7 @@ export default () => {
               description
               link
               github
+              type
               tags
             }
           }
@@ -39,16 +40,16 @@ export default () => {
   const projects = data.allMarkdownRemark.edges
   const projectList = projects.map(edge => {
     const proj = edge.node.frontmatter
+    if(proj.type == "project") {
+      const webLink = () => {
+        if(proj.link !== null) {
+          return (
+        <a href={proj.link}><Link size='30px' /></a>
+          )
+        }
+      }
 
-  const webLink = () => {
-    if(proj.link !== null) {
       return (
-    <a href={proj.link}><Link size='30px' /></a>
-      )
-    }
-  }
-      return (
-        
           <div key={edge.node.id} className='project'>
             <div className='titlebar'>
               <h1 className='project-title'>{proj.title}</h1>
@@ -68,15 +69,13 @@ export default () => {
             <div className='breaker'></div>
           </div>
       )
-  })
+  }})
 
     return (
-     
         <div className='projects-wrapper'>
             <h1 className='projects-title'>Projects</h1>
             <div>{projectList}</div>
         </div>
-        
     )
 
 }

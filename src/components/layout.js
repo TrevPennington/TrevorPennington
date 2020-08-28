@@ -24,7 +24,7 @@ class Layout extends React.Component {
             <Link className='headerToHome'
               to={`/`}
             >
-              {title}
+              Trevor Pennington
             </Link>
           </h3>
         </div>
@@ -34,9 +34,9 @@ class Layout extends React.Component {
       <Wrapper>
         <div className='pageWrapper'>
           <Socialbar />
-          <header>
+          
             {header}
-          </header>
+          
           <main>{children}</main> {/*main content of page. above is header, below is footer */}
         </div>
         <Footer />
