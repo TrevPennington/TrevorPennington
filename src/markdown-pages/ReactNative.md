@@ -11,7 +11,8 @@ tags:
 ##What we are building
 This is a guide for building bottom drawer menus with React Native as vanilla as possible. The goal is to make the menu look and behave like Instagram’s (and many other's) bottom drawer as shown below. We will be using out of the box React Native components, mainly `<Modal />`. For the menu’s open and close state, we will use React Hooks. Styling will be with plain stylesheets although I normally use Styled Components. Feel free to check out the repo on GitHub!
 
-[img]
+![react native bottom drawer menu](./reactNativeGif.gif)
+
 When user touches anywhere outside of the menu or on the cancel button, the menu will close.
 
 ##Start with a functional component

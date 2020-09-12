@@ -1,11 +1,11 @@
 ---
 path: /project2
 title: "Tagsy"
-description: "An iOS app for managing social media hashtags"
-github: 'https://github.com/TrevPennington/tagsy'
+description: "An iOS app for managing social media hashtags and browsing lists created by other users."
+github: 'https://github.com/TrevPennington/tagsyiOS'
 type: "project"
 tags:
-    - React Native
-    - Redux
+    - Swift
+    - UIKit
     - Firebase
 ---
