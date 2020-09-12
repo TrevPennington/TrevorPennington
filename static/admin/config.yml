@@ -1,7 +1,6 @@
 backend:
   name: github
-  repo: trevPennington/trevorpennington #replace with your username/repo
-
+  repo: trevpennington/trevorpennington
 media_folder: static/assets
 public_folder: /assets
 collections:
