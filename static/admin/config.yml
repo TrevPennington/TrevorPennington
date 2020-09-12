@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  branch: master # Branch to update (optional; defaults to master)
+  name: github
+  repo: trevPennington/trevorpennington #replace with your username/repo
 
 media_folder: static/assets
 public_folder: /assets
