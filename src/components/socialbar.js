@@ -1,37 +1,67 @@
-import React from "react"
-import styled from "styled-components"
-import Darkmode from "../components/darkmode"
-import { Github } from "@styled-icons/fa-brands/Github"
-import { Linkedin } from "@styled-icons/fa-brands/Linkedin"
+import React from 'react'
+import styled from 'styled-components'
+import { Instagram } from '@styled-icons/feather/Instagram'
+import { Linkedin } from '@styled-icons/remix-line/Linkedin'
+import { Github } from '@styled-icons/feather/Github'
 
-
-const Socialbar = styled.div`
-    width: 100%;
-    margin: auto;
-    padding-top: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    > * {
-        padding-right: 15px;
-    }
+const SocialBarWrapper = styled.div`
+  margin-left: 60px;
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  
+  @media(max-width: 850px) {
+    margin-left: 20px;
+    width: 100px;
+  }
 `
 
-const Git = styled(Github)`
-    color: var(--textNormal);
+const InstaIcon = styled(Instagram)`
+  width: 30px;
+
+  @media(max-width: 850px) {
+    width: 20px;
+  }
 `
 
-const Linked = styled(Linkedin)`
-    color: var(--textNormal);
+const LinkedInIcon = styled(Linkedin)`
+  width: 30px;
+  padding-bottom: 3px;
+
+  @media(max-width: 850px) {
+    width: 20px;
+  }
 `
 
-export default () => {
+const GithubIcon = styled(Github)`
+  width: 30px;
+
+  @media(max-width: 850px) {
+    width: 20px;
+  }
+`
+
+function SocialBar(props) {
+
+  const color = props.color
+
     return (
-        <Socialbar>
-            <Darkmode />
-            <a href="https://github.com/TrevPennington"><Git size='25px' /></a>
-            <a href="https://www.linkedin.com/in/trevorpennington"><Linked size='25px' /></a>
-        </Socialbar>
+        <SocialBarWrapper>
+
+        <a title="Github" href="https://github.com/TrevPennington" target="_blank">
+          <GithubIcon style={{color: color}} />
+        </a>
+
+        <a title="linked in" href="https://www.linkedin.com/in/trevorpennington/" target="_blank">
+          <LinkedInIcon style={{color: color}} />
+        </a>
+
+        <a title="instagram" href="https://www.instagram.com/trevorandshelby/" target="_blank">
+         <InstaIcon style={{color: color}} />
+        </a>
+        
+      </SocialBarWrapper>
     )
 }
+
+export default SocialBar

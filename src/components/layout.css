@@ -10,19 +10,20 @@ body {
     --proj: whitesmoke;
   
     background-color: var(--bg);
+
+    --darkGreen: #20251b;
+    --lightGreen: rgba(32, 37, 27, 0.6);
+    --mainColor: rgb(40, 54, 24);
+    --lightColor: rgb(254, 250, 224);
+    --lighterColor: rgba(254, 250, 224, 0.3);
+
+    --splashColor: rgba(221, 161, 94, 0.3);
+    --splashedColor: rgba(188, 108, 37, 1);
+    --grey: #efefef;
+    --lightGrey: rgba(239, 239, 239, 0.6);
+
+    --textGrey: #888;
   }
-  
-body.dark {
-    -webkit-font-smoothing: antialiased;
-  
-    --bg: #333;
-    --textNormal: rgba(255, 255, 255, 0.88);
-    --textTitle: white;
-    --textLink: yellow;
-    --hr: hsla(0, 0%, 100%, 0.2);
-    --splash: darkslategrey;
-    --proj: #222;
-}
 
 
 /* Site vars */
@@ -33,6 +34,12 @@ body.dark {
     --main-text-color: #333;
     --main-background: ghostwhite;
     --main-splash-color: antiquewhite;
+
+    /* ============= FONTS  */
+    --sectionTitleFont: "open sans";
+    --postTitleFont: "Source Sans Pro";
+    --tagFont: "Source Sans Pro";
+    --copyFont: "Source Sans Pro";
 }
 
 body {

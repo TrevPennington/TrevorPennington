@@ -1,42 +1,17 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import "./layout.css"
 import Footer from "../components/footer"
-import Socialbar from "../components/socialbar"
+import NavBar from "../components/navbar"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    const blogPath = `${__PATH_PREFIX__}/blog/`
-    let header
-
-    if (location.pathname === rootPath) {
-      header = (
-        <div className='headerWrapper'>
-        </div>
-      )
-    } else {
-      header = (
-        <div className='headerNotHomeWrapper'>
-          <h3 className='headerNotHome'>
-            <Link className='headerToHome'
-              to={`/`}
-            >
-              Trevor Pennington
-            </Link>
-          </h3>
-        </div>
-      )
-    }
+    const { children } = this.props
+    
     return (
       <Wrapper>
         <div className='pageWrapper'>
-          <Socialbar />
-          
-            {header}
-          
+          <NavBar />
           <main>{children}</main> {/*main content of page. above is header, below is footer */}
         </div>
         <Footer />

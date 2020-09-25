@@ -3,12 +3,33 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from 'styled-components';
 
+const BlogWrapper = styled.div`
+  width: 70vw;
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 90px;
+
+  & img {
+    height: 400px;
+  }
+
+  @media(max-width: 1000px) {
+    width: 90vw;
+  }
+`
+
 const BlogTitle = styled.h1`
   width: 70%;
   margin: auto;
   text-align: center;
   margin-bottom: 40px;
   margin-top: 150px;
+
+  @media(max-width: 800px) {
+    width: 90%;
+    margin-top: 50px;
+  }
 `
 
 const BlogDate = styled.h2`
@@ -18,6 +39,15 @@ const BlogDate = styled.h2`
   margin: auto;
   text-align: center;
   margin-bottom: 150px;
+
+  @media(max-width: 800px) {
+    width: 90%;
+    margin-bottom: 40px;
+  }
+`
+
+const BlogBody = styled.div`
+  font-family: var(--tagFont);
 `
 
 export default function Template({
@@ -27,17 +57,17 @@ export default function Template({
   const { frontmatter, html } = markdownRemark
   return (
     <Layout location='blog'>
-      <div className="blog-post-container">
+      <BlogWrapper>
         <div className="blog-post">
           <BlogTitle>{frontmatter.title}</BlogTitle>
           <BlogDate>{frontmatter.date}</BlogDate>
-          <div
-            className="blog-post-content"
+          <BlogBody
+            
             dangerouslySetInnerHTML={{ __html: html }}
-            style={{width: `60%`, margin: `auto`}}
+          
           />
         </div>
-      </div>
+      </BlogWrapper>
     </Layout>
   )
 }
