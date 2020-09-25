@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import "./layout.css"
 import Footer from "../components/footer"
-import NavBar from "../components/navbar"
+import Navbar from "../components/Navbar"
 
 class Layout extends React.Component {
   render() {
@@ -11,7 +11,7 @@ class Layout extends React.Component {
     return (
       <Wrapper>
         <div className='pageWrapper'>
-          <NavBar />
+          <Navbar />
           <main>{children}</main> {/*main content of page. above is header, below is footer */}
         </div>
         <Footer />

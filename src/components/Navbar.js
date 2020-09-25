@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import SocialBar from './SocialBar'
+import SocialBar from './socialbar'
 
 const NavContainer = styled.div`
   background-color: var(--darkGreen);
