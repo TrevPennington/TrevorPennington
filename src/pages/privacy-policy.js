@@ -32,11 +32,7 @@ class IndexPage extends React.Component {
         />
 
         <PrivacyTitle>Tagsy</PrivacyTitle>
-        <PrivBody
-            
-            dangerouslySetInnerHTML={{ __html: test }}
-          
-        />
+
         
       </Layout>
     )
