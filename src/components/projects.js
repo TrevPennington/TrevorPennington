@@ -54,6 +54,7 @@ const ProjectHeader = styled.div`
 
 const ProjectTitle = styled.h2`
   font-family: var(--postTitleFont);
+  font-weight: 500;
   color: black;
   font-size: 1.7em;
   margin-top: 10px;
@@ -72,9 +73,9 @@ const GitLink = styled(Github)`
 
 const ProjectDescription = styled.h3`
   font-family: var(--copyFont);
+  font-weight: 300;
   font-size: 1em;
   line-height: 25px;
-  font-weight: 100;
   color: var(--textGrey);
   margin-top: 20px;
   margin-bottom: 0px;
@@ -91,7 +92,7 @@ const TagsWrapper = styled.div`
 
 const Tag = styled.p`
   font-family: var(--tagFont);
-  font-weight: 100;
+  font-weight: 400;
   color: var(--splashedColor);
   background-color: var(--splashColor);
   

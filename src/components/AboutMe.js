@@ -29,7 +29,8 @@ const BioText = styled.p`
     padding-top: 50px;
     text-align: center;
     font-size: 1.5rem;
-    font-family: "Source Sans Pro";
+    font-family: var(--copyFont);
+    font-weight: 300;
 
     @media(max-width: 750px) {
       width: 90%;

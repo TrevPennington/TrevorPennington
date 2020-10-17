@@ -49,6 +49,7 @@ const BlogDiv = styled.div`
 
 const BlogTitle = styled.h2`
   font-family: var(--postTitleFont);
+  font-weight: 500;
   color: #333;
   font-size: 1.7em;
   margin-top: 10px;
@@ -68,7 +69,7 @@ const BlogTags = styled.div`
 
 const BlogTag = styled.p`
   font-family: var(--tagFont);
-  font-weight: 100;
+  font-weight: 400;
   color: var(--splashedColor);
   background-color: var(--splashColor);
 

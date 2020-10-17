@@ -36,10 +36,10 @@ body {
     --main-splash-color: antiquewhite;
 
     /* ============= FONTS  */
-    --sectionTitleFont: "open sans";
-    --postTitleFont: "Source Sans Pro";
-    --tagFont: "Source Sans Pro";
-    --copyFont: "Source Sans Pro";
+    --sectionTitleFont: "Montserrat", sans-serif;
+    --postTitleFont: "Montserrat", sans-serif;
+    --tagFont: "Montserrat", sans-serif;
+    --copyFont: "Montserrat", sans-serif;
 }
 
 body {
