@@ -17,7 +17,23 @@ This is a guide for building an animated side panel menu in UIKit programmatical
 
 The basic logic is: the menu starts in an off-screen position and a menu button controls the position of the menu via a bool. You then use Core Animation’s animate to make the transitions smooth. 
 
-First, make a button for the menu. I used SFIcon’s `line.horizontal.3` as an icon for the button. 
+##vars/consts
+
+First, add some `variables` to the top of your class. One of type `bool` that will decide whether the menu should be on screen or not. Another of type `NSLayoutConstraint()` and another of type `CGFloat()` that will both control the leading constraint (position) of the menu.
+
+Then add 2 view `constants`. One for the actual menu, and one for the non-menu part of the screen when the menu is open, to recognize taps outside of the menu.
+
+```swift
+var menuHidden = true
+var leadingConstraint = NSLayoutConstraint()
+var menuLeadingAnchorPosition = CGFloat(0.0)
+
+let menuView = UIView()
+let tapToCloseArea = UIView()
+```
+##Render the menu button
+
+Now, make a button for the menu. I used SFIcon’s `line.horizontal.3` as an icon for the button. Hook up a function to the button's `.touchUpInside` property called `toggleMenuView` that will toggle the bool. You initialized it to `true` above meaning the menu is off-screen.
 
 ```swift
 func renderMenuButton() {
@@ -35,13 +51,9 @@ func renderMenuButton() {
 }
 ```
 
-```swift
-var menuHidden = true
-```
-Add a menuHidden `bool` to the top of the class that will start as false meaning the menu is hidden. Hook up a function to the button's `.touchUpInside` property that toggles the bool. True means the menu is on-screen. 
 
 ##Render the menu
-add a function to render the menu. I have added a shadow for styling and to separate it visually from the rest of the screen, appearing to overlap the screen.
+Add a function to render the menu. I have added a shadow to separate it visually from the rest of the screen, appearing to overlap the screen.
 
 ```swift
 func renderMenuView() {
@@ -62,7 +74,7 @@ func renderMenuView() {
         menuView.heightAnchor.constraint(equalTo: view.heightAnchor),
         menuView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
         leadingConstraint,
-        
+
         menuTableView.heightAnchor.constraint(equalTo: menuView.heightAnchor),
         menuTableView.widthAnchor.constraint(equalTo: menuView.widthAnchor),
         menuTableView.leadingAnchor.constraint(equalTo: menuView.leadingAnchor),
@@ -70,6 +82,10 @@ func renderMenuView() {
     ])
 }
 ```
+
+<br></br>
+*Make sure to call `renderMenuButton()` and `renderMenuView()` within `viewDidLoad()`
+
 ##Tap outside the menu to close
 To allow users to tap outside the menu to close it, add 2 functions. One to render the tap area when menu is open and one to remove it when menu is closed.
 
@@ -90,7 +106,7 @@ func removeTapToCloseArea() {
 }
 ```
 ##Toggle the menu
-Now add a function to toggle of the menu. This will be called whenever the button is tapped or the area outside of the menu is tapped when it is opened. 
+Now add a function to toggle the menu. This will be called whenever the button is tapped or the area outside of the menu is tapped when it is opened. 
 
 Changes are made to the UI, letting Swift know to update them next time layout is refreshed. So tell Swift to update the UI by calling `animate`, with duration of .2 to smooth it out. 
 
@@ -115,7 +131,7 @@ Changes are made to the UI, letting Swift know to update them next time layout i
 }
 ```
 ##Menu options
-All that is left is to add menu options. I’ve implemented a table view and added it as a subview of the menu. Make sure to set the data source, delegate, and register a reuse cell in viewDidLoad. And conform your controller to UITableViewDataSource and UITableViewDelegate.
+All that is left is to add menu options. I’ve implemented a table view and added it as a subview of the menu. Make sure to set the data source, delegate, and register a reuse cell in viewDidLoad. And conform your class to UITableViewDataSource and UITableViewDelegate.
 ```swift
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return menuOptions.count

@@ -31,7 +31,7 @@ const NameText = styled.h1`
   font-family: var(--sectionTitleFont);
   font-weight: 400!important;
   letter-spacing: 1px;
-  font-size: 2.3rem;
+  font-size: 2rem;
   color: #ffffff;
   padding-bottom: 2px;
   margin: auto;

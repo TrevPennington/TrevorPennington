@@ -1,6 +1,6 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
 import styled from 'styled-components';
 
 const BlogWrapper = styled.div`
@@ -38,7 +38,7 @@ const BlogDate = styled.h2`
   width: 70%;
   margin: auto;
   text-align: center;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 
   @media(max-width: 800px) {
     width: 90%;
@@ -48,6 +48,17 @@ const BlogDate = styled.h2`
 
 const BlogBody = styled.div`
   font-family: var(--tagFont);
+  font-size: 1em;
+  & img {
+    margin: auto;
+    padding-left: 10%;
+  }
+`
+
+const EndingStatement = styled.p`
+  margin-top: 40px;
+  font-family: var(--tagFont);
+
 `
 
 export default function Template({
@@ -66,6 +77,8 @@ export default function Template({
             dangerouslySetInnerHTML={{ __html: html }}
           
           />
+          <EndingStatement>✌️ Thanks for reading and feel free to reach out with any comments / questions / concerns!</EndingStatement>
+
         </div>
       </BlogWrapper>
     </Layout>
@@ -73,7 +86,8 @@ export default function Template({
 }
 export const pageQuery = graphql`
   query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) 
+    {  
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")

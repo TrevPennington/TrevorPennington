@@ -21,7 +21,7 @@ const SectionTitle = styled.h2`
 
   font-family: var(--sectionTitleFont);
   font-weight: 600;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #333;
   border-bottom: 2px solid #efefef;
   padding-bottom: 5px;
@@ -51,7 +51,7 @@ const BlogTitle = styled.h2`
   font-family: var(--postTitleFont);
   font-weight: 500;
   color: #333;
-  font-size: 1.7em;
+  font-size: 1.3em;
   margin-top: 10px;
   margin-bottom: 0px;
 
@@ -94,7 +94,7 @@ export default () => {
         allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(markdown-pages/blogs)/"  }}
         sort: {
           fields: [frontmatter___date]
-          order: ASC
+          order: DESC
         }
         ) {
           edges {

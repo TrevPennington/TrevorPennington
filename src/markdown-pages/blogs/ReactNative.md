@@ -106,5 +106,3 @@ function BottomMenu() {
 ```
 There you go. The default visibility of the menu is `false`.
 Calling `openMenu()` sets it to true, and `closeMenu()` sets the visibility back to false.
-<br></br>
--Trevor
