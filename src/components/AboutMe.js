@@ -56,7 +56,7 @@ export default () => {
 
 const data = useStaticQuery(graphql`
   query {
-    photo: file(relativePath: { eq: "profile.jpg" }) {
+    photo: file(relativePath: { eq: "headshot2.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid

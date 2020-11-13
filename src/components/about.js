@@ -91,7 +91,7 @@ export default () => {
 
 const data = useStaticQuery(graphql`
   query {
-    pilgrim: file(relativePath: { eq: "profile.jpg" }) {
+    pilgrim: file(relativePath: { eq: "headshot.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid
