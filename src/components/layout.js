@@ -1,8 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import "./layout.css"
+
 import Footer from "../components/footer"
 import Navbar from "../components/Navbar"
+import "fontsource-open-sans"
+import "fontsource-lato"
+import "./layout.css"
 
 class Layout extends React.Component {
   render() {
@@ -11,10 +14,8 @@ class Layout extends React.Component {
     return (
       <Wrapper>
         <div className='pageWrapper'>
-          <Navbar />
           <main>{children}</main> {/*main content of page. above is header, below is footer */}
         </div>
-        <Footer />
       </Wrapper>
     )
   }

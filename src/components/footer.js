@@ -4,8 +4,8 @@ import SocialBar from './socialbar'
 
 const Foot = styled.footer`
   width: 100%;
-  height: 110px;
-  background-color: var(--grey);
+  height: 400px;
+  background-color: var(--footerBg);
 `
 
 const ContentWrapper = styled.div`
@@ -13,8 +13,9 @@ const ContentWrapper = styled.div`
   height: 100%;
   margin: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   @media(max-width: 900px) {
     width: 100%;
@@ -22,25 +23,30 @@ const ContentWrapper = styled.div`
 `
 
 const ArthorLink = styled.a`
-  margin-right: 60px;
-  color: black;
-  padding-bottom: 0px;
-  border-bottom: 5px solid var(--splashColor);
+
+  color: var(--tagText);
+  margin-top: 40px;
   transition-duration: 0.3s;
+  border-radius: 20px;
+  padding: 5px 30px 5px 30px;
+  border: 3px solid var(--splashy);
 
   @media(max-width: 900px) {
-    margin-right: 20px;
+   
     font-size: 0.8em;
   }
 
   &:hover {
-    border-bottom: 5px solid var(--splashedColor);
+    transition-duration: 0.3s;
+    border: 3px solid var(--splashy);
+    background-color: var(--splashyDark);
   }
 `
 
 const Author = styled.p`
   font-family: var(--tagFont);
   margin: auto;
+  text-align: center;
 
   @media(max-width: 900px) {
     font-size: 0.8em;
@@ -53,7 +59,7 @@ export default () => {
       <Foot>
 
         <ContentWrapper>
-          <SocialBar color="#333" />
+          <SocialBar color={"var(--tagText)"} />
           <ArthorLink href="mailto:tppennington@gmail.com">
             <Author>tppennington@gmail.com</Author>
           </ArthorLink>

@@ -1,56 +1,75 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
-const BlogWrapper = styled.div`
-  width: 60%;
-  margin: auto;
-  margin-bottom: 50px;
+const FadeIn = keyframes`
+    from {
+        opacity: 0;
+    }
 
-  @media(max-width: 900px) {
-    width: 80%;
-  }
+    to {
+        opacity: 100;
+    }
 `
 
-const SectionTitle = styled.h2`
+const FadeOut = keyframes`
+    from {
+        opacity: 100;
+    }
+
+    to {
+        opacity: 0;
+    }
+`
+
+const BlogWrapper = styled.div`
+  //animation: ${FadeIn} 0.7s;  
   width: 100%;
   margin: auto;
-  margin-bottom: 30px;
-  text-align: left;
+  padding-top: 0px;
+  padding-bottom: 50px;
+  background-color: var(--bg);
 
-  font-family: var(--sectionTitleFont);
-  font-weight: 600;
-  font-size: 2.2rem;
-  color: #333;
-  border-bottom: 2px solid #efefef;
-  padding-bottom: 5px;
+`
 
-  @media(max-width: 800px) {
-    font-size: 2em;
-  }
+const BlogsTitle = styled.p`
+  font-family: var(--titles);
+  font-weight: 200;
+  text-transform: uppercase;
+  color: var(--textNormal);
+  text-align: center;
+  margin: auto;
+  font-size: 2em;
+  letter-spacing: 5px;
+  font-style: italic;
 `
 
 const BlogDiv = styled.div`
+  width: 60%;
   padding-left: 20px;
   border-radius: 12px;
   padding-bottom: 12px;
   padding-top: 8px;
+
+  margin: auto;
   margin-bottom: 15px;
+  margin-top: 50px;
   display: flex;
   flex-flow: column nowrap;
-
-  background-color: var(--lightGrey);
   &:hover {
-    background-color: var(--grey);
-    box-shadow: 1px 1px 30px rgba(0,0,0,0.1);
+    background-color: #111;
   }
+  @media(max-width: 1000px) {
+    width: 90vw;
+  }
+
 `
 
 const BlogTitle = styled.h2`
   font-family: var(--postTitleFont);
   font-weight: 500;
-  color: #333;
+  color: var(--textNormal);
   font-size: 1.3em;
   margin-top: 10px;
   margin-bottom: 0px;
@@ -70,13 +89,13 @@ const BlogTags = styled.div`
 const BlogTag = styled.p`
   font-family: var(--tagFont);
   font-weight: 400;
-  color: var(--splashedColor);
-  background-color: var(--splashColor);
+  color: var(--tagText);
+  background-color: var(--splashyDark);
 
   margin-right: 8px;
   padding: 2px;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
   border-radius: 13px;
   margin-bottom: 7px;
 
@@ -141,8 +160,8 @@ export default () => {
       )})
 
       return (
-        <BlogWrapper>
-          <SectionTitle>Articles</SectionTitle>
+        <BlogWrapper id="blog">
+          <BlogsTitle>Blog</BlogsTitle>
           { blogsMapped }
         </BlogWrapper>
       )

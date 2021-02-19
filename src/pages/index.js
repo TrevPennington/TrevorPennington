@@ -1,10 +1,9 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import AboutMe from "../components/AboutMe"
+import HomeLayout from "../components/HomeLayout"
 import "../components/index.css"
-import Projects from "../components/projects"
-import Blogs from "../components/blogs"
+
 
 class IndexPage extends React.Component {
   render() {
@@ -17,9 +16,8 @@ class IndexPage extends React.Component {
           title="Home"
           keywords={[`blog`, `gatsby`, `javascript`, `react`, `swift`, `iOS`, `developer`]}
         />
-        <AboutMe />
-        <Projects title='Projects' />
-        <Blogs title='Blogs' />
+        <HomeLayout />
+
       </Layout>
     )
   }

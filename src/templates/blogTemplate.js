@@ -2,6 +2,8 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import styled from 'styled-components';
+import NavBar from "../components/Navbar";
+import Footer from "../components/Footer"
 
 const BlogWrapper = styled.div`
   width: 70vw;
@@ -21,6 +23,9 @@ const BlogWrapper = styled.div`
 
 const BlogTitle = styled.h1`
   width: 70%;
+  color: var(--textNormal);
+  font-family: var(--titles);
+  letter-spacing: 2px;
   margin: auto;
   text-align: center;
   margin-bottom: 40px;
@@ -33,8 +38,8 @@ const BlogTitle = styled.h1`
 `
 
 const BlogDate = styled.h2`
-  font-size: 1.2em;
-  color: grey;
+  font-size: 1em;
+  color: var(--textNormal);
   width: 70%;
   margin: auto;
   text-align: center;
@@ -48,6 +53,7 @@ const BlogDate = styled.h2`
 
 const BlogBody = styled.div`
   font-family: var(--tagFont);
+  color: var(--textNormal);
   font-size: 1em;
   & img {
     margin: auto;
@@ -68,6 +74,7 @@ export default function Template({
   const { frontmatter, html } = markdownRemark
   return (
     <Layout location='blog'>
+      <NavBar location="blog" />
       <BlogWrapper>
         <div className="blog-post">
           <BlogTitle>{frontmatter.title}</BlogTitle>
@@ -81,6 +88,7 @@ export default function Template({
 
         </div>
       </BlogWrapper>
+      <Footer />
     </Layout>
   )
 }

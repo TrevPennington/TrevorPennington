@@ -1,8 +1,36 @@
 /* Dark Mode theming */
 
 body {
-    --bg: white;
+
+    /* DARK */
+
+    --bg: #222;
+    --textNormal: #999999;
+    --textBright: white;
+    --tagBg: #3e432e;
+    --formBg: #555;
+    --projBg: #333333;
+    --shadowColor: rgba(255,255,255,0.02);
+    --tagText: #efefef;
+    --headerBg: #2d302f;
+    --footerBg: #2d302f;
+    --splashy: rgb(192, 166, 122);
+    --splashyDark: rgba(192, 166, 122, 0.6);
+
+
+    /* LIGHT */
+
+    /* --bg: white;
     --textNormal: #333;
+    --textBright: black;
+    --tagBg: #777;
+    --tagText: #efefef;
+    --projBg: #778687;
+    --shadowColor: rgba(0,0,0,0.09); */
+
+
+    /* OTHER */
+
     --textTitle: #333;
     --textLink: blue;
     --hr: hsla(0, 0%, 0%, 0.2);
@@ -14,11 +42,11 @@ body {
     --darkGreen: #20251b;
     --lightGreen: rgba(32, 37, 27, 0.6);
     --mainColor: rgb(40, 54, 24);
-    --lightColor: rgb(254, 250, 224);
+    --lightColor: rgba(254, 250, 224, 0.5);
     --lighterColor: rgba(254, 250, 224, 0.3);
 
-    --splashColor: rgba(221, 161, 94, 0.3);
-    --splashedColor: rgba(188, 108, 37, 1);
+    --splashColor: rgb(1,25,16);
+    --splashedColor: rgba(1,25,16, 0.3);
     --grey: #efefef;
     --lightGrey: rgba(239, 239, 239, 0.6);
 
@@ -36,14 +64,15 @@ body {
     --main-splash-color: antiquewhite;
 
     /* ============= FONTS  */
+    --titles: "Lato", sans-serif;
     --sectionTitleFont: "Montserrat", sans-serif;
     --postTitleFont: "Montserrat", sans-serif;
     --tagFont: "Montserrat", sans-serif;
-    --copyFont: "Montserrat", sans-serif;
+    --copyFont: "Lato", sans-serif;
 }
 
 body {
-    color: var(--textNormal);
+    color: var(--bg);
     transition: color 0.2s ease-out, background 0.2s ease-out;
 }
 

@@ -1,130 +1,255 @@
-import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
-import styled from 'styled-components'
-import { Github } from '@styled-icons/feather/Github'
+import React, { useState, useEffect } from "react";
+import { Link, graphql, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
+import styled, { keyframes } from "styled-components";
+import ProjectActive from "./projectActive";
+import { Github } from "@styled-icons/boxicons-logos/Github";
+import AppStoreWhite from "../images/AppStoreWhite.svg";
+import { LinkExternal } from "@styled-icons/boxicons-regular/LinkExternal";
+
+const FadeIn = keyframes`
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100;
+    }
+`;
+
+const FadeAndSlide = keyframes`
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 100;
+        transform: translateX(0px);
+    }
+`;
+
+const StyledProjectActive = styled(ProjectActive)`
+  animation: ${FadeAndSlide} 0.7s;
+`;
 
 const ProjectsWrapper = styled.div`
-  width: 60%;
-  margin: auto;
-  margin-bottom: 50px;
-
-  @media(max-width: 900px) {
-    width: 80%;
-  }
-`
-
-const SectionTitle = styled.h2`
+  animation: ${FadeIn} 0.7s;
   width: 100%;
   margin: auto;
-  margin-bottom: 30px;
-  text-align: left;
+  padding-bottom: 150px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 
-  font-family: var(--sectionTitleFont);
-  font-weight: 600;
-  font-size: 2.2rem;
-  color: #333;
-  border-bottom: 2px solid #efefef;
-  padding-bottom: 5px;
-
-  @media(max-width: 800px) {
-    font-size: 2em;
+  @media (max-width: 1000px) {
+    padding-bottom: 50px;
   }
-`
+`;
 
-const ProjectDiv = styled.div`
-  padding-left: 20px;
-  border-radius: 12px;
-  padding-bottom: 12px;
-  padding-top: 8px;
-  margin-bottom: 15px;
-  
-  background-color: var(--lightGrey);
-  &:hover {
-    background-color: var(--grey);
-    box-shadow: 1px 1px 30px rgba(0,0,0,0.1);
+const Project = styled.div`
+  width: 650px;
+  height: 650px;
+  margin: 50px;
+  margin-bottom: 50px;
+  background-color: var(--projBg);
+
+  border-radius: 35px;
+
+  @media (max-width: 1000px) {
+    background-color: transparent;
+    width: 90vw;
+    height: auto;
   }
-`
+`;
 
 const ProjectHeader = styled.div`
+  //background-color: red;
+  max-width: 80%;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-between;
-`
-
-const ProjectTitle = styled.h2`
-  font-family: var(--postTitleFont);
-  font-weight: 500;
-  color: black;
-  font-size: 1.3em;
+  justify-content: space-around;
+  margin: auto;
   margin-top: 10px;
-  margin-bottom: 0px;
-
-  @media(max-width: 800px) {
-    font-size: 1.3em;
+  @media (max-width: 1000px) {
+    margin-top: 10px;
   }
-`
+
+  @media (max-width: 600px) {
+    flex-flow: column;
+    margin-top: 30px;
+  }
+`;
+const Icon = styled.div`
+  width: 100px;
+  height: 100px;
+  border-radius: 25px;
+`;
+
+const IconImage = styled(Img)`
+  border: 1px solid #efefef;
+  border-radius: 25px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+`;
+
+const ProjectTitle = styled.p`
+  //background-color: pink;
+  width: 50%;
+  font-family: var(--sectionTitleFont);
+  font-weight: 400;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  color: var(--textBright);
+  text-align: left;
+  margin: auto;
+  margin-left: 0px;
+
+  @media (max-width: 800px) {
+    
+    line-height: 30px;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    text-align: center;
+  }
+`;
+
+const LinkBar = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  @media (max-width: 600px) {
+    margin-top: 15px;
+  }
+`;
 
 const GitLink = styled(Github)`
-  width: 30px;
-  margin-right: 18px;
-  color: var(--splashedColor);
-`
+  width: 40px;
+  color: var(--textBright);
+  margin-right: 20px;
+`;
 
-const ProjectDescription = styled.h3`
+const StyledLinkExternal = styled(LinkExternal)`
+  width: 35px;
+  color: var(--textBright);
+  
+`;
+
+const AppleLink = styled.a`
+  margin-top: 5px;
+`;
+
+const VidWrapper = styled.div`
+  width: 360px;
+  height: 360px;
+  margin: auto;
+  margin-top: 40px;
+  // border: 1px solid white;
+  // border-radius: 20px;
+
+  @media (max-width: 1000px) {
+    width: 310px;
+    height: 310px;
+    margin-top: 0px;
+  }
+
+  @media (max-width: 600px) {
+    width: 290px;
+    height: 290px;
+    margin-top: 0px;
+  }
+`;
+
+const ProjectContentWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
+
+  @media (max-width: 1000px) {
+    width: 90vw;
+    padding-bottom: 0px;
+  }
+`;
+
+const ProjectDescription = styled.p`
+  width: 80%;
+  height: 70px;
   font-family: var(--copyFont);
   font-weight: 300;
-  font-size: 1em;
-  line-height: 25px;
-  color: var(--textGrey);
+  font-size: 0.9em;
+  text-align: left;
+  line-height: 30px;
+  color: var(--textNormal);
+  margin: auto;
   margin-top: 20px;
-  margin-bottom: 0px;
-  width: 90%;
-  
-`
+
+  @media (max-width: 800px) {
+    height: auto;
+  }
+`;
 
 const TagsWrapper = styled.div`
   width: 100%;
   margin-top: 20px;
   display: flex;
   flex-flow: row wrap;
-`
+  align-items: flex-end;
+  justify-content: center;
+  @media (max-width: 1000px) {
+    padding-top: 10px;
+  }
+`;
 
 const Tag = styled.p`
   font-family: var(--tagFont);
   font-weight: 400;
-  color: var(--splashedColor);
-  background-color: var(--splashColor);
-  
+  color: var(--tagText);
+  background-color: var(--headerBg);
+
   margin-right: 8px;
   padding: 2px;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
   border-radius: 13px;
   margin-bottom: 7px;
 
-  @media(max-width: 800px) {
-    font-size: .8em;
+  @media (max-width: 800px) {
+    font-size: 0.8em;
   }
-`
-
+`;
 
 export default () => {
-
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(markdown-pages/projects)/"  }}
-      sort: {
-        fields: [frontmatter___order]
-        order: ASC
-      }
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/(markdown-pages/projects)/" } }
+        sort: { fields: [frontmatter___order], order: ASC }
       ) {
         edges {
           node {
             id
             frontmatter {
               title
+              order
+              color
+              app
+              icon {
+                childImageSharp {
+                  fluid(maxWidth: 800) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
               description
+              vid {
+                publicURL
+              }
               link
               github
               type
@@ -134,51 +259,85 @@ export default () => {
         }
       }
     }
-  `)
+  `);
 
-  
-  const projects = data.allMarkdownRemark.edges
-  const projectsMapped = projects.map(edge => {
-  const proj = edge.node.frontmatter
-      
-      return (
-        <a href={proj.link} target="_blank" rel="noreferrer">
-          <ProjectDiv key={edge.node.id}>
-              <ProjectHeader>
-                <ProjectTitle>
-                    {proj.title}
-                </ProjectTitle>
+  const allProjects = data.allMarkdownRemark.edges;
+  const projectsMapped = allProjects.map((edge, id) => {
+    const proj = edge.node.frontmatter;
 
-                <a title="Github" href={proj.github} target="_blank" rel="noreferrer">
-                  <GitLink />
-                </a>
-       
-              </ProjectHeader>
-
-              <ProjectDescription>
-                {proj.description}
-              </ProjectDescription>
-
-              <TagsWrapper>
-                {proj.tags.map((tag) => (
-                  
-                    <Tag>{tag}</Tag>
-                  
-                ))
-              }
-              </TagsWrapper>
-          </ProjectDiv>
-        </a>
-
-
-    )})
+    let iconFluid = proj.icon.childImageSharp.fluid;
 
     return (
-      <ProjectsWrapper>
-        <SectionTitle>Projects</SectionTitle>
+      <Project color={proj.color}>
+        <VidWrapper>
+          <video
+            src={proj.vid.publicURL}
+            playsinline="playsinline"
+            autoplay="autoplay"
+            loop="true"
+            width={`100%`}
+            height={`100%`}
+            scrolling="no"
+            loading="lazy"
+            muted="true"
+            style={{
+              border: `1px solid transparent`,
+              borderRadius: `30px`,
+              boxShadow: `1px 1px 15px rgba(0,0,0,0.1)`,
+              objectFit: `fill`,
+            }}
+          />
+        </VidWrapper>
+        <ProjectHeader>
+          <ProjectTitle>{proj.title}</ProjectTitle>
 
-          {projectsMapped}
 
-      </ProjectsWrapper>
-    )
-  }
+          <LinkBar>
+          <a title="Github" href={proj.github} target="_blank" rel="noreferrer">
+            <GitLink />
+          </a>
+            {proj.app ? (
+              <>
+                <AppleLink
+                  title="AppStore"
+                  href={proj.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <AppStoreWhite />
+                </AppleLink>
+              </>
+            ) : (
+              <>
+                <a
+                  title="Website"
+                  href={proj.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <StyledLinkExternal />
+                </a>
+              </>
+            )}
+          </LinkBar>
+        </ProjectHeader>
+
+        <ProjectContentWrapper>
+          <ProjectDescription>{proj.description}</ProjectDescription>
+
+          <TagsWrapper>
+            {proj.tags.map((tag, id) => (
+              <Tag key={id}>{tag}</Tag>
+            ))}
+          </TagsWrapper>
+        </ProjectContentWrapper>
+      </Project>
+    );
+  });
+
+  return (
+    <>
+      <ProjectsWrapper>{projectsMapped}</ProjectsWrapper>
+    </>
+  );
+};
