@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import styled, { keyframes } from "styled-components";
-import ProjectActive from "./projectActive";
 import { Github } from "@styled-icons/boxicons-logos/Github";
 import AppStoreWhite from "../images/AppStoreWhite.svg";
 import { LinkExternal } from "@styled-icons/boxicons-regular/LinkExternal";
@@ -15,22 +14,6 @@ const FadeIn = keyframes`
     to {
         opacity: 100;
     }
-`;
-
-const FadeAndSlide = keyframes`
-    from {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-
-    to {
-        opacity: 100;
-        transform: translateX(0px);
-    }
-`;
-
-const StyledProjectActive = styled(ProjectActive)`
-  animation: ${FadeAndSlide} 0.7s;
 `;
 
 const ProjectsWrapper = styled.div`

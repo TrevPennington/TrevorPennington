@@ -1,5 +1,5 @@
 ---
-path: /project4
+path: /curate
 title: "Curate Coffee"
 icon: curateIcon.png
 vid: ./curateVid.mp4

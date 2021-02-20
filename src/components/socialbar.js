@@ -23,7 +23,7 @@ const GithubIcon = styled(Github)`
   width: 30px;
 `
 
-function SocialBar(props) {
+export default (props) => {
 
   const color = props.color
 
@@ -45,5 +45,3 @@ function SocialBar(props) {
       </SocialBarWrapper>
     )
 }
-
-export default SocialBar

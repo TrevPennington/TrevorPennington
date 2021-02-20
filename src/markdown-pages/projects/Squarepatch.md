@@ -1,5 +1,5 @@
 ---
-path: /project1
+path: /squarepatch
 title: "SquarePatch"
 icon: curateIcon.png
 vid: ./squarepatchVid.mp4

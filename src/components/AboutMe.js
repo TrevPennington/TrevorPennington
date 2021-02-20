@@ -2,8 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from "gatsby"
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import { TriangleDown } from '@styled-icons/octicons/TriangleDown'
-import SocialBar from "./socialbar"
+import SocialBar from "./SocialBar"
 
 const AboutWrapper = styled.div`
     width: 100%;

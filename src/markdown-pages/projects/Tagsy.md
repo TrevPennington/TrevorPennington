@@ -1,5 +1,5 @@
 ---
-path: /project2
+path: /tagsy
 title: "Tagsy"
 icon: tagsyIcon.png
 vid: ./tagsyVid.mp4

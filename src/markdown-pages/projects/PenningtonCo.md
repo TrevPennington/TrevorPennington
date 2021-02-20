@@ -1,5 +1,5 @@
 ---
-path: /project2
+path: /penningtonco
 title: "Trevor and Shelby"
 icon: tagsyIcon.png
 vid: ./penningtonVid.mp4

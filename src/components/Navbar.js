@@ -103,7 +103,7 @@ const NotHomeLink = styled(Link)`
   }
 `
 
-function NavBar(props) {
+export default (props) => {
 
   return (
     <>
@@ -143,6 +143,4 @@ function NavBar(props) {
         </>
   )
 }
-
-export default NavBar
 

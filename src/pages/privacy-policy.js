@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import AboutMe from "../components/AboutMe"
 import "../components/index.css"
 import styled from 'styled-components'
 
@@ -10,15 +9,8 @@ const PrivacyTitle = styled.h2`
     font-size: 1.5em;
 `
 
-const PrivBody = styled.div`
 
-`
-
-
-class IndexPage extends React.Component {
-
-
-
+class PrivPage extends React.Component {
 
   render() {
 
@@ -39,4 +31,4 @@ class IndexPage extends React.Component {
   }
 }
 
-export default IndexPage
+export default PrivPage

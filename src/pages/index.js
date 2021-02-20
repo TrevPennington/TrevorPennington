@@ -1,8 +1,8 @@
-import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import HomeLayout from "../components/HomeLayout"
-import "../components/index.css"
+import React from "react";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import HomeLayout from "../components/HomeLayout";
+import "../components/index.css";
 
 
 class IndexPage extends React.Component {
