@@ -86,7 +86,7 @@ export default () => {
         <FormWrapper>
 
             <FormTitle id="contact">say hello</FormTitle>
-            <Form>
+            <Form onSubmit={() => print("submitted")}>
                 <TextInput type="text" placeholder="message" rows="5"></TextInput>
                 <EmailInput type="email" placeholder="email"></EmailInput>
                 <SubmitButton type="submit">send!</SubmitButton>
