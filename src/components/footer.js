@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import SocialBar from './SocialBar'
+import SocialBar from './socialbar'
 
 const Foot = styled.footer`
   width: 100%;

@@ -1,9 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import styled from 'styled-components';
 import NavBar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 
 const BlogWrapper = styled.div`
   width: 70vw;
