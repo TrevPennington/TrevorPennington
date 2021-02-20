@@ -3,7 +3,7 @@ import styled from "styled-components";
 import AboutMe from "./AboutMe";
 import Work from "./Work";
 import NavBar from "./Navbar";
-import Blogs from "./blogs";
+import Blogs from "./Blogs";
 import ContactForm from "./ContactForm";
 import Footer from "./Footer";
 
