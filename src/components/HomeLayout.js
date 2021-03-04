@@ -20,7 +20,7 @@ export default () => {
             <NavBar />
             <AboutMe />
             <Work />
-            <Blogs />
+            {/* <Blogs /> */}
             <ContactForm />
             <Footer />
         </HomeWrapper>

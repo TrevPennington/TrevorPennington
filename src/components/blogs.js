@@ -140,12 +140,10 @@ export default () => {
         to={post.path}
       >
         <BlogDiv>
-
-
+          
         <BlogTitle>
             {post.title}
         </BlogTitle>
-
 
         <BlogTags>
         {post.tags.map((tag) => (

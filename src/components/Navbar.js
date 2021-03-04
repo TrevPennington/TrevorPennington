@@ -133,7 +133,7 @@ export default (props) => {
 
             <ButtonBar>
               <NavLink href="#projects">projects</NavLink>
-              <NavLink href="#blog">blog</NavLink>
+              {/* <NavLink href="#blog">blog</NavLink> */}
               <NavLink href="#contact">contact</NavLink>
             </ButtonBar>
 

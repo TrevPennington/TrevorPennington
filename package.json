@@ -13,7 +13,7 @@
     "babel-plugin-styled-components": "^1.10.0",
     "fontsource-lato": "^4.0.0",
     "fontsource-open-sans": "^4.0.0",
-    "gatsby": "^2.24.65",
+    "gatsby": "^2.32.9",
     "gatsby-image": "^2.0.39",
     "gatsby-plugin-dark-mode": "^1.1.0",
     "gatsby-plugin-google-analytics": "^2.3.19",

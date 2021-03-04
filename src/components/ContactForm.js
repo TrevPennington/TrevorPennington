@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const FormWrapper = styled.div`
     padding-bottom: 200px;
-    padding-top: 200px;
+    padding-top: 0px;
     background-color: var(--bg);
 
     @media(max-width: 900px) {
@@ -81,12 +81,19 @@ const SubmitButton = styled.button`
 `
 
 export default () => {
+
+    const confirmationAlert = () => {
+        alert("Thank you for contacting me. I will reply as soon as possible!")
+    }
+
     return (
         <>
         <FormWrapper>
 
             <FormTitle id="contact">say hello</FormTitle>
-            <Form>
+            <Form name='inquiry' method='POST' className='contactForm' data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={confirmationAlert}>
+                  <input type="hidden" name="bot-field" />
+                  <input type="hidden" name="form-name" value="inquiry" />
                 <TextInput type="text" placeholder="message" rows="5"></TextInput>
                 <EmailInput type="email" placeholder="email"></EmailInput>
                 <SubmitButton type="submit">send!</SubmitButton>
