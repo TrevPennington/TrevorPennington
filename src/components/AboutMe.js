@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from "gatsby"
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import SocialBar from "./SocialBar"
+import SocialBar from "./SocialBarC"
 
 const AboutWrapper = styled.div`
     width: 100%;

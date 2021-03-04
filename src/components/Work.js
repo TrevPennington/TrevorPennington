@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Projects from "./Projects";
+import Projects from "./ProjectsC";
 
 const WorkWrapper = styled.div`
     width: 100%;

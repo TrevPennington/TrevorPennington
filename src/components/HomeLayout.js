@@ -3,9 +3,9 @@ import styled from "styled-components";
 import AboutMe from "./AboutMe";
 import Work from "./Work";
 import NavBar from "./Navbar";
-import Blogs from "./Blogs";
+import Blogs from "./BlogsC";
 import ContactForm from "./ContactForm";
-import Footer from "./Footer";
+import Footer from "./FooterC";
 
 
 const HomeWrapper = styled.div`
