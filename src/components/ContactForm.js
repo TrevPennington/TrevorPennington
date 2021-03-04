@@ -83,7 +83,7 @@ const SubmitButton = styled.button`
 export default () => {
 
     const confirmationAlert = () => {
-        alert("Thank you for contacting us, we will respond as soon as we can!")
+        alert("Thank you for contacting me, I will respond as soon as possible!")
       }
 
     return (
