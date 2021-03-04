@@ -9,7 +9,7 @@ export default (props) => {
   return (
       <Wrapper>
         <div className='pageWrapper'>
-          <main>{children}</main> {/*main content of page. above is header, below is footer */}
+          <main>{children}</main>
         </div>
       </Wrapper>
     )
