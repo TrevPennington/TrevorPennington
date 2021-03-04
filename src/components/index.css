@@ -1,0 +1,55 @@
+
+a {
+    text-shadow: none;
+}
+a:hover {
+    border: none;
+    text-decoration: none;
+}
+
+.articlesComp {
+    width: 400px;
+    height: 70vh;
+    margin: auto;
+    background-color: lightslategrey;
+    
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.4);
+}
+
+.articlesWrapper {
+    height: 70vh;
+}
+
+.articlesHeader {
+    color: var(--main-font-color);
+    margin: 0;
+    padding-top: 10px;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    font-weight: 400;
+
+    text-align: center;
+}
+
+.articleItem {
+
+    margin-left: 15px;
+}
+
+.articleTitle {
+    margin-bottom: 5px;
+    font-size: 1.3em;
+    text-shadow: none;
+}
+
+.articleLink {
+    color: var(--main-font-color);
+    text-decoration: none;
+}
+
+.articleDate {
+    color: var(--second-font-color);
+    font-size: 0.8em;
+}
