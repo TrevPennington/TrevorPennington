@@ -14,7 +14,7 @@ class IndexPage extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title="Home"
-          keywords={[`blog`,`javascript`, `react`, `swift`, `iOS`, `developer`]}
+          keywords={[`blog`,`javascript`, `react`, `swift`, `iOS`, `developer`, `designer`]}
         />
         <HomeLayout />
 
