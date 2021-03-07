@@ -63,7 +63,7 @@ const data = useStaticQuery(graphql`
   }
 `)
 
-    const bioWords = "Hello, I am a mobile and web developer with a focus on Swift and React. I like to write about simple and clean UI."
+    const bioWords = "Hello, I am a mobile and web developer with a focus on Swift and React."
 
     return (
         <AboutWrapper>
